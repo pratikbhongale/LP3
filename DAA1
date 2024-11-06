@@ -1,0 +1,31 @@
+Recursive function to calculate the nth Fibonacci number
+def rec(n):
+    if n <= 1:
+        return n
+    else:
+        return rec(n - 1) + rec(n - 2)
+
+# Iterative function to print Fibonacci series up to n terms
+def ite(n):
+    a, b = 0, 1
+    if n > 0:
+        print(a)  # Print the first Fibonacci number
+    if n > 1:
+        print(b)  # Print the second Fibonacci number
+    for i in range(2, n):
+        c = a + b
+        print(c)  # Print subsequent Fibonacci numbers
+        a, b = b, c
+
+# Main block to execute the code
+if __name__ == "__main__":
+    num = int(input("Enter the number of terms for the Fibonacci series: "))
+    if num <= 0:
+        print("Please enter a positive number")
+    else:
+        print("Fibonacci series (recursive):")
+        for i in range(num):
+            print(rec(i))
+
+        print("Fibonacci series (iterative):")
+        ite(num)
